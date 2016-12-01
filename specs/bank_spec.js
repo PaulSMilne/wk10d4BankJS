@@ -39,6 +39,11 @@ describe('Bank', function(){
           assert.equal(account3, bank.findLargestAccount());
      });
 
+     it('can find the total of all the accounts', function(){
+          var sum = bank.total();
+          assert.equal(35250, sum);
+     })
+
 });
 
 
