@@ -31,7 +31,7 @@ describe('Bank', function(){
      });
 
      it('should be able to find the account by name', function(){
-          var account = bank.findByName("Pavlos");
-          assert.equal(account3, account);
+          var account = bank.findByName("Jo");
+          assert.equal(account2, account);
      })
 })
