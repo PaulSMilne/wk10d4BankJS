@@ -7,11 +7,11 @@ Bank.prototype = {
      addAccount: function(account){
           this.accounts.push(account);
      },
+
      findByName: function(name){
-          var account = this.accounts.find( function(account){
+          return this.accounts.find( function(account){
                return name === account.name;
           })
-          return account;
      },
 
      findLargestAccount: function(){
@@ -20,7 +20,19 @@ Bank.prototype = {
           })
           var largestAccount = account.pop();
           return largestAccount;
+     },
+
+     total: function(){ 
+          var amounts = [];//could use filter.map chain to create the populated array.
+          this.accounts.forEach(function(item){
+               amounts.push(item.amount);
+          })
+          var sum = amounts.reduce(function(a,b){
+               return a + b;
+          }, 0)
+          return sum;
      }
+
 }
 module.exports = Bank;
 
