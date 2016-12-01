@@ -12,6 +12,14 @@ Bank.prototype = {
                return name === account.name;
           })
           return account;
+     },
+
+     findLargestAccount: function(){
+          var account = this.accounts.sort(function(a,b){
+               return a.amount - b.amount;
+          })
+          var largestAccount = account.pop();
+          return largestAccount;
      }
 }
 module.exports = Bank;

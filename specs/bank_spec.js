@@ -33,5 +33,15 @@ describe('Bank', function(){
      it('should be able to find the account by name', function(){
           var account = bank.findByName("Jo");
           assert.equal(account2, account);
-     })
-})
+     });
+
+     it('should find the largest account', function(){
+          assert.equal(account3, bank.findLargestAccount());
+     });
+
+});
+
+
+
+
+
